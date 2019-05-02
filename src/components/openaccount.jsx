@@ -1,46 +1,73 @@
 import React, { Component } from 'react';
 import '../css/addform.css';
+import { OpenAccForm } from './openaccountform';
+import { postAccountsList } from '../util/service-helper.js'
 
 
 class OpenAccount extends Component {
 
-    state = {
-        accname: '',
-        acctype: ''
+    constructor(props) {
+        super(props);
+        this.state = {
+            account: {
+                
+                accName: '',
+                accType: '',
+                currentBal: ''
+            }
+        }
     }
 
+    handleChangeInfo = e => {
+        console.log('hellooo');
+        const { name, value } = e.target;
 
+        this.setState((prevState) => ({
+            account: {
+                ...prevState.account,
+                [name]: value
+            }
+        }));
+    }
 
-    render (){
-    return (
-        <div className="container">
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-        <center><h2>Open Account</h2></center>
-            <form action>
-                    <label for="accname">Account Name:</label>
-                    <input type="text" name="accname" placeholder="Your account name.." />
-                    <label for="acctype">Account Type:</label>
-                    <select name="acctype">
-                        <option value="">Select account type..</option>
-                        <option value="savings">Savings</option>
-                        <option value="checking">Checking</option>
-                    </select>
-                    <label for="currentbal">Initial Deposit</label>
-                    <input type="number" name="currentbal" placeholder="Initial deposit of 200.00" readOnly></input>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                <div class="row">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
+    
+    // Add user on click
+    handleAddUser = e => {
 
-    )}
+        postAccountsList(this.state.account)
+        .then(function (response) {
+            alert("Add this account?");
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+        e.preventDefault();
+
+        
+
+        // let account = this.state.account;
+        // let accounts = [...this.state.accounts];
+
+        // accounts.push(account);
+
+        // e.preventDefault();
+
+        // axios.post(`http://localhost:8080/OnlineBanking/rest/accounts`, {accounts})
+        //     .then(res => {
+        //         console.log(res);
+        //         console.log(res.data);
+        //     })
+    }
+
+    render() {
+        return (
+            <div className="forms">
+            <OpenAccForm handleChangeInfo={this.handleChangeInfo} 
+            handleAddUser={this.handleAddUser} />
+            </div>
+        )
+    }
 }
 
 export default OpenAccount;
