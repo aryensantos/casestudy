@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import { BrowserRouter, Route } from "react-router-dom";
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Header } from './components/navbar.jsx';
 import  Home  from './components/home.jsx'
 import  Accounts  from './components/accounts.jsx';
@@ -27,6 +26,11 @@ class App extends Component {
         <Route path="/addmerchant" component={AddMerchant}/>
         <Route path="/transactions" component={Transactions}/>
       </BrowserRouter>
+
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       </div>
     )
   }

@@ -27,32 +27,17 @@ class AddMerchant extends Component {
         }));
     }
 
-    
-    // Add user on click
     handleAddMerchant = e => {
 
         postMerchantsList(this.state.merchant)
         .then(function (response) {
-            alert("Add this merchant?");
+            alert("Merchant added.");
           console.log(response);
         })
         .catch(function (error) {
           console.log(error);
         });
         e.preventDefault();
-
-        // let account = this.state.account;
-        // let accounts = [...this.state.accounts];
-
-        // accounts.push(account);
-
-        // e.preventDefault();
-
-        // axios.post(`http://localhost:8080/OnlineBanking/rest/accounts`, {accounts})
-        //     .then(res => {
-        //         console.log(res);
-        //         console.log(res.data);
-        //     })
     }
 
     render() {

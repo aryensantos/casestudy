@@ -36,7 +36,7 @@ class OpenAccount extends Component {
 
         postAccountsList(this.state.account)
         .then(function (response) {
-            alert("Add this account?");
+            alert("Account created.");
           console.log(response);
         })
         .catch(function (error) {

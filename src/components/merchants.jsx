@@ -11,7 +11,7 @@ const Merchants = () => {
             <br></br>
             <br></br>
             <center><h2>Merchants List</h2></center>
-
+            <br></br>
             <MerchantsList />
         </div>
         

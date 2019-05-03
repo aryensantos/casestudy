@@ -31,7 +31,7 @@ class MerchantsList extends Component {
                             <td>{merchant.merID}</td>
                             <td>{merchant.merName}</td>
                             <td>{merchant.merDesc}</td>
-                            <td><a href="">Pay Merchant</a></td>
+                            <td><button type="pay">Pay Merchant</button></td>
                         </tr>
 
                     )}

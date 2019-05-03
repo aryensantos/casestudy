@@ -11,7 +11,7 @@ const Accounts = () => {
             <br></br>
             <br></br>
             <center><h2>Accounts List</h2></center>
-
+            <br></br>
             <AccountsList />
         </div>
         

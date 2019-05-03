@@ -8,7 +8,11 @@ const Home = () => {
                 <br></br>
                 <br></br>
                 <br></br>
+                <br></br>
+                <br></br>
                 <h1>Welcome to BeginConnect!</h1>
+                
+                <br></br>
                 <center><img src="source.gif" alt="gif" /></center>
             </div>
         )

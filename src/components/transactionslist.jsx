@@ -6,6 +6,7 @@ class TransactionsList extends Component {
 
     state = {
         transactions: [],
+
     };
 
     componentDidMount() {
@@ -22,6 +23,7 @@ class TransactionsList extends Component {
                 <center><table>
                     <tr className="thead">
                         <th>Transaction ID</th>
+                        <th>Account ID</th>
                         <th>Type</th>
                         <th>Date</th>
                     </tr>
@@ -29,6 +31,7 @@ class TransactionsList extends Component {
                     {this.state.transactions.map(transaction =>
                         <tr>
                             <td>{transaction.transID}</td>
+                            <td>{transaction.accID}</td>
                             <td>{transaction.transType}</td>
                             <td>{transaction.transDate}</td>
                         </tr>
