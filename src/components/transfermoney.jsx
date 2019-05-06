@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
+import '../css/addform.css';
+import TransferMoneyForm from './transfermoneyform';
 
-
-const TransferMoney = () => {
+class TransferMoney extends Component {
+    render () {
         return (
-            <div className="transfermoney">
-                
-                <br></br>
-                <br></br>
-                <br></br>
-                <p>
-                    Transfer Money
-                </p>
+            <div className="forms">
+            <TransferMoneyForm />
             </div>
-
         )
     }
+}
 
 export default TransferMoney;

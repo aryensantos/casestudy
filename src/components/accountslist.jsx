@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import { Input, FormGroup, Label, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
-import { Table } from 'react-bootstrap';
 
 
 
@@ -38,7 +37,7 @@ class AccountsList extends Component {
             accId, accName, accType, currentBal
         }).then((response) => {
 
-            this._refreshBooks();
+            this._refreshAccounts();
 
             this.setState({
                 editAccModal: false, editAccData: { accId: '', accName: '', accType: '', currentBal: '' }
@@ -48,7 +47,7 @@ class AccountsList extends Component {
         });
     }
 
-    _refreshBooks() {
+    _refreshAccounts() {
     axios.get('http://localhost:8080/OnlineBanking/rest/accounts').then((response) => {
         this.setState({
             accounts: response.data

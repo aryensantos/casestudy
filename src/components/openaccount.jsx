@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/addform.css';
 import { OpenAccForm } from './openaccountform';
-import { postAccountsList } from '../util/service-helper.js'
+import { postAccountsList, postTransactionsList } from '../util/service-helper.js'
 
 
 class OpenAccount extends Component {
@@ -15,6 +15,11 @@ class OpenAccount extends Component {
                 accType: '',
                 currentBal: ''
             }
+            // transaction: {
+            //     transType: 'Account created.',
+            //     transDate: '2019-05-02',
+            //     accID: ''
+            // }
         }
     }
 
@@ -27,6 +32,10 @@ class OpenAccount extends Component {
                 ...prevState.account,
                 [name]: value
             }
+            // transaction: {
+            //     ...prevState.transaction,
+            //     [name]: value
+            // }
         }));
     }
 
@@ -34,6 +43,7 @@ class OpenAccount extends Component {
     // Add user on click
     handleAddUser = e => {
 
+        // postTransactionsList(this.state.transaction)
         postAccountsList(this.state.account)
         .then(function (response) {
             alert("Account created.");
