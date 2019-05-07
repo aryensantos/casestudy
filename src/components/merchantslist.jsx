@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import { Input, FormGroup, Label, Modal, ModalHeader, ModalBody, ModalFooter, Button, Table } from 'reactstrap';
-
+import { postTransactionsList } from '../util/service-helper.js'
 
 class MerchantsList extends Component {
 
@@ -14,7 +14,14 @@ class MerchantsList extends Component {
         },
         updateBalData: {
             accName: '',
-            currentBal: ''
+            currentBal: '',
+            accID: ''
+        },
+        transaction: {
+            transType: 'Paid merchant.',
+            transDate: '2019-05-02',
+            accID: ''
+
         },
         payMerchantModal: false
     }
@@ -47,6 +54,18 @@ class MerchantsList extends Component {
         }));
     }
 
+    addTransaction() {
+        postTransactionsList(this.state.transaction)
+        .then(function (response) {
+           
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+    }
+
     updateBal() {
         let { accName, currentBal } = this.state.updateBalData;
 
@@ -57,13 +76,16 @@ class MerchantsList extends Component {
             accName, currentBal
         }).then((response) => {
 
+            this.addTransaction();
+
             this.setState({
-                payMerchantModal: false, updateBalData: { accName: '', currentBal: '' }
+                payMerchantModal: false, updateBalData: { accName: '', currentBal: '', accID: '' }
                 
             })
 
             this._refreshAccounts();
 
+            alert("Merchant paid.");
             console.log(response.data)
 
 
@@ -105,11 +127,13 @@ class MerchantsList extends Component {
                                 let { updateBalData } = this.state;
 
                                 updateBalData.accName = e.target.value;
+                                updateBalData.accID = e.target.value;
 
                                 this.setState({ updateBalData });
                             } } >
-                                <option id="ph" value="">Select account name..</option>
+                                <option>Select account name..</option>
                                 {this.state.accounts.map(account => <option>
+                                    {account.accID}
                                     {account.accName}
                                 </option>)}
                             </select>
@@ -133,12 +157,13 @@ class MerchantsList extends Component {
                 </Modal>
 
                 <Fragment>
+                    <ul>
                     <center><table>
                         <tr className="thead">
                             <th>Merchant ID</th>
                             <th>Name</th>
                             <th>Description</th>
-                            <th></th>
+                            <th>Pay Merchant</th>
                         </tr>
 
                         {this.state.merchants.map(merchant =>
@@ -146,11 +171,12 @@ class MerchantsList extends Component {
                                 <td>{merchant.merID}</td>
                                 <td>{merchant.merName}</td>
                                 <td>{merchant.merDesc}</td>
-                                <td><button onClick={this.payMerchant.bind(this, merchant.merID, merchant.merName)}>Pay Merchant</button></td>
+                                <td><button onClick={this.payMerchant.bind(this, merchant.merID, merchant.merName)}>Pay</button></td>
                             </tr>
 
                         )}
                     </table></center>
+                    </ul>
                 </Fragment>
             </div>
             

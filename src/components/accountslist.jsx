@@ -109,14 +109,17 @@ render() {
 
             <Fragment>
                 <center><table>
-                    <tr className="thead">
+                    
+                    <thead>
+                        <tr>
                         <th>Account ID</th>
                         <th>Name</th>
                         <th>Type</th>
                         <th>Current Balance</th>
                         <th>Action</th>
-                    </tr>
-
+                        </tr>
+                    </thead>
+                    <tbody>
                     {this.state.accounts.map(account =>
                         <tr key={account.accId}>
                             <td>{account.accId}</td>
@@ -126,8 +129,8 @@ render() {
                             <td><button type="edit" onClick={this.editAcc.bind(this, account.accId, account.accName, account.accType, account.currentBal)}>Edit</button></td>
                             
                         </tr>
-
-                    )}
+                    
+                    )}</tbody>
                 </table></center>
             </Fragment>
         </div>

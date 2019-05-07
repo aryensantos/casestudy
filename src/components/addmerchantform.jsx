@@ -8,9 +8,6 @@ class AddMerchantForm extends Component {
             <div className="container">
             <br></br>
             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
         <center><h2>Add Merchant</h2></center>
             <form>
                     <label for="merName">Merchant Name:</label>

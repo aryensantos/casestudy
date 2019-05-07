@@ -31,8 +31,9 @@ class AddMerchant extends Component {
 
         postMerchantsList(this.state.merchant)
         .then(function (response) {
-            alert("Merchant added.");
+            
           console.log(response);
+          alert("Merchant added.");
         })
         .catch(function (error) {
           console.log(error);

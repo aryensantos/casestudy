@@ -7,9 +7,6 @@ const Home = () => {
             <div className="welcome">
                 <br></br>
                 <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
                 <h1>Welcome to BeginConnect!</h1>
                 
                 <br></br>

@@ -9,9 +9,6 @@ class OpenAccForm extends Component {
             <div className="container">
                 <br></br>
                 <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
                 <center><h2>Open Account</h2></center>
                 <form>
                     <label for="accName">Account Name:</label>
@@ -23,7 +20,7 @@ class OpenAccForm extends Component {
                         <option value="Checking">Checking</option>
                     </select>
                     <label for="currentBal">Initial Deposit</label>
-                    <input type="number" name="currentBal" placeholder="Initial deposit of 200.00" onChange={this.props.handleChangeInfo} ></input>
+                    <input type="number" readOnly name="currentBal" placeholder="Initial deposit of 500.00" onChange={this.props.handleChangeInfo} max="500" min="500"></input>
                     <br></br>
                     <br></br>
                     <br></br>
@@ -39,7 +36,8 @@ class OpenAccForm extends Component {
 
 OpenAccForm.propTypes = {
     handleChangeInfo: PropTypes.func,
-    handleAddUser: PropTypes.func
+    handleAddUser: PropTypes.func,
+    addTransaction: PropTypes.func
 }
 
 export {

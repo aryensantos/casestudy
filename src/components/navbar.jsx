@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 class Header extends Component {
     render() {
         return (
-            <div className="navbar nav navbar-nav navbar-pull-right">
+            <div className="navbar nav navbar-nav navbar-left">
                 <ul className="navv">
                 <a className="navbar-brand" href="/">BeginConnect</a>
                 <NavLink to="/accounts">Accounts</NavLink>

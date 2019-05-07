@@ -47,7 +47,7 @@ class TransactionsList extends Component {
         return (
             <div className="transactions">
                 <center><FormGroup className="filter">
-                <input type="text"  name="accName"  onKeyUp={this.handleSubmit}onChange={this.handleChangeName} placeholder="Search for Name"/>
+                <input type="text"  name="accName"  onKeyUp={this.handleSubmit}onChange={this.handleChangeName} placeholder="Search for an account name.."/>
                 </FormGroup></center>
                 <br></br>
                 <ul>

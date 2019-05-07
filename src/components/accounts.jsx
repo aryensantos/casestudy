@@ -7,9 +7,6 @@ const Accounts = () => {
         <div className="accounts">
             <br></br>
             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
             <center><h2>Accounts List</h2></center>
             <br></br>
             <AccountsList />

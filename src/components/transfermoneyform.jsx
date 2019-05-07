@@ -20,9 +20,6 @@ class TransferMoneyForm extends Component {
             <div className="container">
                 <br></br>
                 <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
                 <center><h2>Transfer Money</h2></center>
                 <form>
                     <label for="accName">Sender Name:</label>

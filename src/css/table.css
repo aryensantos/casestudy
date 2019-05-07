@@ -8,22 +8,25 @@ table{
     padding: 60px;
     background-color: ivory;
     text-align: center;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 button {
     align-items: center;
-    background-color: rgb(31, 63, 131);
+    background-color: #2020d6;
     color: white;
-    padding: 12px 20px;
+    padding: 10px 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 th {
-    background-color: 	#1E90FF;
+    background-color: 	#e85625;
     color:white;
 }
 
 tr:hover {background-color: #ddd;}
+
+
 
