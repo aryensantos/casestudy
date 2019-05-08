@@ -50,7 +50,6 @@ class TransactionsList extends Component {
                 <input type="text"  name="accName"  onKeyUp={this.handleSubmit}onChange={this.handleChangeName} placeholder="Search for an account name.."/>
                 </FormGroup></center>
                 <br></br>
-                <ul>
                     <center><table>
                         <tr className="thead">
                             <th>Transaction ID</th>
@@ -69,7 +68,6 @@ class TransactionsList extends Component {
 
                         )}
                     </table></center>
-                </ul>
             </div>
         )
     }

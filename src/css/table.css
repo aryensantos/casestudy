@@ -9,6 +9,8 @@ table{
     background-color: ivory;
     text-align: center;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
+    table-layout: fixed;
+    width: 70%;
 }
 
 button {
@@ -21,6 +23,10 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #101069;
+  }
+
 th {
     background-color: 	#e85625;
     color:white;
@@ -28,5 +34,14 @@ th {
 
 tr:hover {background-color: #ddd;}
 
-
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(232, 247, 252);
+    border: #282c34;
+    border-style: ridge;
+    border-width: 1.5px;
+    width: 70%;
+    padding: 1%;
+    font-weight: 400;
+  }
 

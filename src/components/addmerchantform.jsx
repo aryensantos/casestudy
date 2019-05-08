@@ -9,6 +9,7 @@ class AddMerchantForm extends Component {
             <br></br>
             <br></br>
         <center><h2>Add Merchant</h2></center>
+        <br></br>
             <form>
                     <label for="merName">Merchant Name:</label>
                     <input type="text" name="merName" placeholder="Merchant name.." onChange={this.props.handleChangeInfo} />
@@ -19,7 +20,7 @@ class AddMerchantForm extends Component {
                     <br></br>
                     <br></br>
                 <div class="row">
-                    <button type="submit" onClick={this.props.handleAddMerchant}>Submit</button>
+                    <button type="submit" onClick={this.props.handleAddMerchant}><i class="fas fa-check-double"></i> Submit</button>
                 </div>
             </form>
         </div>

@@ -15,13 +15,17 @@ class MerchantsList extends Component {
         updateBalData: {
             accName: '',
             currentBal: '',
-            accID: ''
+            accId: ''
         },
         transaction: {
             transType: 'Paid merchant.',
-            transDate: '2019-05-02',
+            transDate: '2019-05-09',
             accID: ''
 
+        },
+        addTransData: {
+            accId: '',
+            accName: ''
         },
         payMerchantModal: false
     }
@@ -54,6 +58,12 @@ class MerchantsList extends Component {
         }));
     }
 
+    addTrans = (accId) => {
+        this.setState({
+            addTransData: { accId }
+        });
+    }
+
     addTransaction() {
         postTransactionsList(this.state.transaction)
         .then(function (response) {
@@ -76,10 +86,10 @@ class MerchantsList extends Component {
             accName, currentBal
         }).then((response) => {
 
-            this.addTransaction();
+            // this.addTransaction();
 
             this.setState({
-                payMerchantModal: false, updateBalData: { accName: '', currentBal: '', accID: '' }
+                payMerchantModal: false, updateBalData: { accName: '', currentBal: '', accId: '' }
                 
             })
 
@@ -123,20 +133,28 @@ class MerchantsList extends Component {
                         </FormGroup>
                         <FormGroup>
                             <Label for="accName">Account Paying:</Label>
-                            <select name="accName" onChange={(e) => {
+                            <select name="accName" onClick={this.addTrans.bind(this)} onChange={(e) => {
                                 let { updateBalData } = this.state;
 
                                 updateBalData.accName = e.target.value;
-                                updateBalData.accID = e.target.value;
 
                                 this.setState({ updateBalData });
                             } } >
                                 <option>Select account name..</option>
                                 {this.state.accounts.map(account => <option>
-                                    {account.accID}
                                     {account.accName}
                                 </option>)}
                             </select>
+                        </FormGroup>
+                        <FormGroup>
+                            <Input id="accId" value={this.state.addTransData.accId} onChange={(e) => {
+                                let { addTransData } = this.state;
+
+                                addTransData.accId = e.target.value;
+
+                                this.setState({ addTransData });
+
+                            }} hidden ></Input>
                         </FormGroup>
                         <FormGroup>
                             <Label for="amount">Amount:</Label>
@@ -157,7 +175,6 @@ class MerchantsList extends Component {
                 </Modal>
 
                 <Fragment>
-                    <ul>
                     <center><table>
                         <tr className="thead">
                             <th>Merchant ID</th>
@@ -171,12 +188,11 @@ class MerchantsList extends Component {
                                 <td>{merchant.merID}</td>
                                 <td>{merchant.merName}</td>
                                 <td>{merchant.merDesc}</td>
-                                <td><button onClick={this.payMerchant.bind(this, merchant.merID, merchant.merName)}>Pay</button></td>
+                                <td><button onClick={this.payMerchant.bind(this, merchant.merID, merchant.merName)}><i class="fas fa-money-check"></i></button></td>
                             </tr>
 
                         )}
                     </table></center>
-                    </ul>
                 </Fragment>
             </div>
             

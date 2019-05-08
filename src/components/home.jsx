@@ -6,11 +6,8 @@ const Home = () => {
         return (
             <div className="welcome">
                 <br></br>
-                <br></br>
-                <h1>Welcome to BeginConnect!</h1>
-                
-                <br></br>
-                <center><img src="source.gif" alt="gif" /></center>
+                <center><img src="beginconnect.png" width={960} length={540} alt="png" /></center>
+                <hr></hr>
             </div>
         )
     }

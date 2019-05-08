@@ -36,6 +36,8 @@ h1 {
   font-family: "Times New Roman", Times, serif;
 }
 
+
+
 hr{
   display: block;
   margin-top: 16px;
@@ -46,3 +48,4 @@ hr{
   border-width: 2px;
   color: rgb(10, 10, 138);
 }
+

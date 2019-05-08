@@ -10,6 +10,7 @@ class OpenAccForm extends Component {
                 <br></br>
                 <br></br>
                 <center><h2>Open Account</h2></center>
+                <br></br>
                 <form>
                     <label for="accName">Account Name:</label>
                     <input type="text" name="accName" placeholder="Your account name.." onChange={this.props.handleChangeInfo} />
@@ -19,13 +20,13 @@ class OpenAccForm extends Component {
                         <option value="Savings">Savings</option>
                         <option value="Checking">Checking</option>
                     </select>
-                    <label for="currentBal">Initial Deposit</label>
+                    <label for="currentBal">Initial Deposit:</label>
                     <input type="number" readOnly name="currentBal" placeholder="Initial deposit of 500.00" onChange={this.props.handleChangeInfo} max="500" min="500"></input>
                     <br></br>
                     <br></br>
                     <br></br>
                     <div class="row">
-                        <button type="submit" onClick={this.props.handleAddUser}>Submit</button>
+                        <button type="submit" onClick={this.props.handleAddUser}><i class="fas fa-check-double"></i> Submit</button>
                     </div>
                 </form>
             </div>
